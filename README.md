@@ -49,6 +49,14 @@ Variables principales utilizadas:
 - Recomendaciones de pricing por segmento.
 - Conclusiones ejecutivas orientadas a negocio.
 
+## Desempeño del modelo
+
+El modelo de churn fue entrenado usando **Regresión Logística**. La métrica principal utilizada fue **ROC AUC**, ya que permite evaluar la capacidad del modelo para diferenciar entre clientes que desertan y clientes que permanecen.
+
+- Modelo: **Regresión Logística**
+- Métrica principal: **ROC AUC**
+- ROC AUC obtenido: **0.838**
+
 ## Resultados principales
 
 El simulador evaluó escenarios de incremento de precio desde 0% hasta 15%.
@@ -94,8 +102,15 @@ Los clientes leales con contratos de uno o dos años presentan menor riesgo de c
 
 La estrategia recomendada es priorizar aumentos en segmentos leales de bajo riesgo y probar aumentos moderados en segmentos de riesgo medio.
 
+## Limitaciones del análisis
+
+Este proyecto utiliza escenarios simulados de incremento de precio. El dataset no contiene aumentos históricos reales, por lo que los resultados deben interpretarse como una simulación basada en riesgo estimado de churn, no como una medición causal directa de elasticidad precio.
+
+Para una implementación real, se recomienda validar los resultados mediante pruebas A/B, grupos de control o experimentos de pricing controlados.
+
 ## Estructura del repositorio
 
+```text
 price-increase-risk-simulator/
 │
 ├── data/
@@ -104,11 +119,33 @@ price-increase-risk-simulator/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+```
 
-## Desempeño del modelo
+## Cómo ejecutar el proyecto
+
+1. Clonar este repositorio.
+2. Crear un entorno virtual.
+3. Instalar las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Agregar el dataset **Telco Customer Churn** dentro de la carpeta `data/`.
+5. Ejecutar el notebook:
+
 ```text
-El modelo de churn fue entrenado usando Regresión Logística. La métrica principal utilizada fue ROC AUC, ya que permite evaluar la capacidad del modelo para diferenciar entre clientes que desertan y clientes que permanecen.
+notebooks/01_price_increase_risk_simulator.ipynb
+```
 
-- Modelo: Regresión Logística
-- Métrica principal: ROC AUC
-- ROC AUC obtenido: X.XX
+## Estado del proyecto
+
+Primera versión completada.
+
+Posibles mejoras futuras:
+
+- Crear una aplicación interactiva en Streamlit.
+- Comparar Regresión Logística con Random Forest o XGBoost.
+- Agregar explicabilidad del modelo mediante importancia de variables o SHAP.
+- Generar recomendaciones a nivel cliente.
+- Simular políticas diferenciadas de precio por segmento.
