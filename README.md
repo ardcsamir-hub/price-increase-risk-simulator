@@ -96,7 +96,6 @@ La estrategia recomendada es priorizar aumentos en segmentos leales de bajo ries
 
 ## Estructura del repositorio
 
-```text
 price-increase-risk-simulator/
 │
 ├── data/
@@ -105,3 +104,11 @@ price-increase-risk-simulator/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
+## Desempeño del modelo
+```text
+El modelo de churn fue entrenado usando Regresión Logística. La métrica principal utilizada fue ROC AUC, ya que permite evaluar la capacidad del modelo para diferenciar entre clientes que desertan y clientes que permanecen.
+
+- Modelo: Regresión Logística
+- Métrica principal: ROC AUC
+- ROC AUC obtenido: X.XX
