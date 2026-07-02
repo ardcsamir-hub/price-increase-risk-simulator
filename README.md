@@ -1,38 +1,38 @@
-# Price Increase Risk Simulator: Churn-Based Pricing Strategy
+# Simulador de Incremento de Precio basado en Riesgo de Churn
 
-## Business Problem
+## Problema de negocio
 
-Companies often need to increase prices, but applying the same increase to all customers can increase churn risk. This project simulates different price increase scenarios and identifies which customer segments can tolerate higher prices with lower churn risk.
+Las empresas suelen necesitar aumentar precios para mejorar ingresos, pero aplicar el mismo aumento a todos los clientes puede elevar el riesgo de deserción. Este proyecto simula distintos escenarios de incremento de precio e identifica qué segmentos de clientes podrían tolerar aumentos con menor riesgo de churn.
 
-## Objective
+## Objetivo
 
-Build a churn-based pricing simulator to estimate the impact of price increases on customer churn risk and expected revenue.
+Construir un simulador de pricing basado en un modelo de churn para estimar el impacto de distintos aumentos de precio sobre el riesgo de deserción y el revenue esperado.
 
 ## Dataset
 
-Telco Customer Churn dataset.
+Se utilizó el dataset **Telco Customer Churn**.
 
-Main variables used:
+Variables principales utilizadas:
 
-- Customer tenure
-- Monthly charges
-- Total charges
-- Contract type
-- Payment method
-- Internet service
-- Tech support
+- Antigüedad del cliente
+- Cargo mensual
+- Cargo total acumulado
+- Tipo de contrato
+- Método de pago
+- Servicio de internet
+- Soporte técnico
 - Churn
 
-## Methodology
+## Metodología
 
-1. Data cleaning and preprocessing
-2. Exploratory churn analysis
-3. Customer segmentation by price and tenure
-4. Churn prediction model using Logistic Regression
-5. Price increase simulation from 0% to 15%
-6. Segment-level pricing recommendations
+1. Limpieza y preparación de datos.
+2. Análisis exploratorio de churn.
+3. Segmentación de clientes por precio y antigüedad.
+4. Entrenamiento de un modelo de churn con Regresión Logística.
+5. Simulación de incrementos de precio entre 0% y 15%.
+6. Recomendaciones de pricing por segmento.
 
-## Tools
+## Herramientas utilizadas
 
 - Python
 - pandas
@@ -42,18 +42,18 @@ Main variables used:
 - scikit-learn
 - Jupyter Notebook
 
-## Key Deliverables
+## Entregables principales
 
-- Churn prediction model
-- Price increase scenario simulation
-- Segment-level pricing recommendations
-- Executive business insights
+- Modelo predictivo de churn.
+- Simulación de escenarios de incremento de precio.
+- Recomendaciones de pricing por segmento.
+- Conclusiones ejecutivas orientadas a negocio.
 
-## Key Results
+## Resultados principales
 
-The churn-based pricing simulator evaluated price increase scenarios from 0% to 15%.
+El simulador evaluó escenarios de incremento de precio desde 0% hasta 15%.
 
-| Price Increase | Avg. Churn Risk | Expected Revenue | High-Risk Customers |
+| Incremento de precio | Riesgo promedio de churn | Revenue esperado | Clientes de alto riesgo |
 |---:|---:|---:|---:|
 | 0% | 26.6% | $316,162 | 982 |
 | 3% | 26.8% | $324,687 | 1,010 |
@@ -62,39 +62,39 @@ The churn-based pricing simulator evaluated price increase scenarios from 0% to 
 | 10% | 27.1% | $344,353 | 1,049 |
 | 15% | 27.4% | $358,206 | 1,078 |
 
-## Best Scenario
+## Mejor escenario simulado
 
-The 15% price increase scenario generated the highest expected revenue:
+El escenario con incremento de precio del **15%** generó el mayor revenue esperado:
 
-- Expected revenue: $358,206
-- Incremental revenue vs. baseline: $42,044
-- Average churn risk: 27.4%
-- Churn risk increase vs. baseline: +0.8 percentage points
-- Additional high-risk customers: +96
+- Revenue esperado: **$358,206**
+- Revenue incremental vs. escenario base: **$42,044**
+- Riesgo promedio de churn: **27.4%**
+- Incremento del riesgo de churn vs. escenario base: **+0.8 puntos porcentuales**
+- Clientes adicionales en alto riesgo: **+96**
 
-## Segment-Level Findings
+## Hallazgos por segmento
 
-The strongest candidates for price increases were loyal customers with one-year or two-year contracts, especially those with low predicted churn risk.
+Los mejores candidatos para incremento de precio fueron clientes leales con contratos de uno o dos años, especialmente aquellos con bajo riesgo estimado de churn.
 
-Examples of low-risk segments identified by the simulator:
+Ejemplos de segmentos con bajo riesgo identificados por el simulador:
 
-| Contract | Tenure Segment | Price Segment | Internet Service | Customers | Avg. Churn Risk | Price Increase | Recommendation |
+| Contrato | Segmento de antigüedad | Segmento de precio | Servicio de internet | Clientes | Riesgo promedio de churn | Incremento de precio | Recomendación |
 |---|---|---|---|---:|---:|---:|---|
-| Two year | Loyal | High price | Fiber optic | 386 | 7.4% | 15% | Apply increase |
-| Two year | Loyal | Mid-high price | DSL | 270 | 2.1% | 15% | Apply increase |
-| Two year | Loyal | Mid-low price | DSL | 244 | 1.5% | 15% | Apply increase |
-| Two year | Loyal | Low price | No | 463 | 0.5% | 15% | Apply increase |
-| One year | Loyal | High price | Fiber optic | 383 | 19.1% | 15% | Apply increase |
+| Two year | Loyal | High price | Fiber optic | 386 | 7.4% | 15% | Aplicar aumento |
+| Two year | Loyal | Mid-high price | DSL | 270 | 2.1% | 15% | Aplicar aumento |
+| Two year | Loyal | Mid-low price | DSL | 244 | 1.5% | 15% | Aplicar aumento |
+| Two year | Loyal | Low price | No | 463 | 0.5% | 15% | Aplicar aumento |
+| One year | Loyal | High price | Fiber optic | 383 | 19.1% | 15% | Aplicar aumento |
 
-## Business Recommendation
+## Recomendación de negocio
 
-The analysis suggests that price increases should be applied selectively rather than uniformly.
+El análisis sugiere que los aumentos de precio no deberían aplicarse de manera uniforme a toda la base de clientes.
 
-Loyal customers with one-year or two-year contracts show lower churn risk and are stronger candidates for higher price increases. New customers and month-to-month customers should be treated more carefully, using control groups or retention actions before applying aggressive price increases.
+Los clientes leales con contratos de uno o dos años presentan menor riesgo de churn y son mejores candidatos para aumentos de precio más altos. En cambio, los clientes nuevos y los clientes con contratos mensuales deberían tratarse con mayor cautela, utilizando grupos de control, pruebas A/B o acciones de retención antes de aplicar incrementos agresivos.
 
-The recommended strategy is to prioritize price increases for low-risk loyal segments while testing moderate increases in medium-risk groups.
+La estrategia recomendada es priorizar aumentos en segmentos leales de bajo riesgo y probar aumentos moderados en segmentos de riesgo medio.
 
-## Repository Structure
+## Estructura del repositorio
 
 ```text
 price-increase-risk-simulator/
