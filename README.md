@@ -49,22 +49,6 @@ Main variables used:
 - Segment-level pricing recommendations
 - Executive business insights
 
-## Business Recommendation
-
-Price increases should not be applied uniformly. Loyal customers with long-term contracts are better candidates for higher increases, while month-to-month and new customers should receive retention actions before any pricing change.
-
-## Repository Structure
-
-```text
-price-increase-risk-simulator/
-│
-├── data/
-├── notebooks/
-├── outputs/
-├── README.md
-├── requirements.txt
-└── .gitignore
-
 ## Key Results
 
 The churn-based pricing simulator evaluated price increase scenarios from 0% to 15%.
@@ -88,6 +72,20 @@ The 15% price increase scenario generated the highest expected revenue:
 - Churn risk increase vs. baseline: +0.8 percentage points
 - Additional high-risk customers: +96
 
+## Segment-Level Findings
+
+The strongest candidates for price increases were loyal customers with one-year or two-year contracts, especially those with low predicted churn risk.
+
+Examples of low-risk segments identified by the simulator:
+
+| Contract | Tenure Segment | Price Segment | Internet Service | Customers | Avg. Churn Risk | Price Increase | Recommendation |
+|---|---|---|---|---:|---:|---:|---|
+| Two year | Loyal | High price | Fiber optic | 386 | 7.4% | 15% | Apply increase |
+| Two year | Loyal | Mid-high price | DSL | 270 | 2.1% | 15% | Apply increase |
+| Two year | Loyal | Mid-low price | DSL | 244 | 1.5% | 15% | Apply increase |
+| Two year | Loyal | Low price | No | 463 | 0.5% | 15% | Apply increase |
+| One year | Loyal | High price | Fiber optic | 383 | 19.1% | 15% | Apply increase |
+
 ## Business Recommendation
 
 The analysis suggests that price increases should be applied selectively rather than uniformly.
@@ -95,3 +93,15 @@ The analysis suggests that price increases should be applied selectively rather 
 Loyal customers with one-year or two-year contracts show lower churn risk and are stronger candidates for higher price increases. New customers and month-to-month customers should be treated more carefully, using control groups or retention actions before applying aggressive price increases.
 
 The recommended strategy is to prioritize price increases for low-risk loyal segments while testing moderate increases in medium-risk groups.
+
+## Repository Structure
+
+```text
+price-increase-risk-simulator/
+│
+├── data/
+├── notebooks/
+├── outputs/
+├── README.md
+├── requirements.txt
+└── .gitignore
