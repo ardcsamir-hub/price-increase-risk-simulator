@@ -31,6 +31,7 @@ Variables principales utilizadas:
 4. Entrenamiento de un modelo de churn con Regresión Logística.
 5. Simulación de incrementos de precio entre 0% y 15%.
 6. Recomendaciones de pricing por segmento.
+7. Desarrollo de una app interactiva en Streamlit.
 
 ## Herramientas utilizadas
 
@@ -41,6 +42,7 @@ Variables principales utilizadas:
 - seaborn
 - scikit-learn
 - Jupyter Notebook
+- Streamlit
 
 ## Entregables principales
 
@@ -48,6 +50,7 @@ Variables principales utilizadas:
 - Simulación de escenarios de incremento de precio.
 - Recomendaciones de pricing por segmento.
 - Conclusiones ejecutivas orientadas a negocio.
+- App interactiva para explorar escenarios de pricing.
 
 ## Desempeño del modelo
 
@@ -108,11 +111,31 @@ Este proyecto utiliza escenarios simulados de incremento de precio. El dataset n
 
 Para una implementación real, se recomienda validar los resultados mediante pruebas A/B, grupos de control o experimentos de pricing controlados.
 
+## Demo interactiva
+
+El proyecto incluye una app básica en **Streamlit** para explorar escenarios de incremento de precio.
+
+La app permite seleccionar un escenario de aumento y visualizar:
+
+- Riesgo promedio de churn.
+- Revenue esperado.
+- Clientes de alto riesgo.
+- Impacto incremental frente al escenario base.
+- Recomendación ejecutiva.
+
+Para ejecutarla:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
 ## Estructura del repositorio
 
 ```text
 price-increase-risk-simulator/
 │
+├── app/
+│   └── streamlit_app.py
 ├── data/
 ├── notebooks/
 ├── outputs/
@@ -138,14 +161,20 @@ pip install -r requirements.txt
 notebooks/01_price_increase_risk_simulator.ipynb
 ```
 
+6. Ejecutar la app interactiva:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
 ## Estado del proyecto
 
 Primera versión completada.
 
 Posibles mejoras futuras:
 
-- Crear una aplicación interactiva en Streamlit.
+- Desplegar la app en Streamlit Community Cloud.
 - Comparar Regresión Logística con Random Forest o XGBoost.
 - Agregar explicabilidad del modelo mediante importancia de variables o SHAP.
 - Generar recomendaciones a nivel cliente.
-- Simular políticas diferenciadas de precio por segmento.
+- Simular políticas diferenciadas de precio por segmento.   
