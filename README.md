@@ -64,3 +64,34 @@ price-increase-risk-simulator/
 ├── README.md
 ├── requirements.txt
 └── .gitignore
+
+## Key Results
+
+The churn-based pricing simulator evaluated price increase scenarios from 0% to 15%.
+
+| Price Increase | Avg. Churn Risk | Expected Revenue | High-Risk Customers |
+|---:|---:|---:|---:|
+| 0% | 26.6% | $316,162 | 982 |
+| 3% | 26.8% | $324,687 | 1,010 |
+| 5% | 26.9% | $330,338 | 1,024 |
+| 8% | 27.0% | $338,767 | 1,039 |
+| 10% | 27.1% | $344,353 | 1,049 |
+| 15% | 27.4% | $358,206 | 1,078 |
+
+## Best Scenario
+
+The 15% price increase scenario generated the highest expected revenue:
+
+- Expected revenue: $358,206
+- Incremental revenue vs. baseline: $42,044
+- Average churn risk: 27.4%
+- Churn risk increase vs. baseline: +0.8 percentage points
+- Additional high-risk customers: +96
+
+## Business Recommendation
+
+The analysis suggests that price increases should be applied selectively rather than uniformly.
+
+Loyal customers with one-year or two-year contracts show lower churn risk and are stronger candidates for higher price increases. New customers and month-to-month customers should be treated more carefully, using control groups or retention actions before applying aggressive price increases.
+
+The recommended strategy is to prioritize price increases for low-risk loyal segments while testing moderate increases in medium-risk groups.
